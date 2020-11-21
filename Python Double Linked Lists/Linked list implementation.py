@@ -41,18 +41,23 @@ class LinkedList():
 		holder = 0
 		data = None
 		while current_node != None:
-			
-			if index == holder:
-				data = current_node.previous.data
-				break
+			if index == 0:
+				return None
 			else:
-				current_node = current_node.next
-				holder +=1
+
+				if index == holder:
+					data = current_node.previous.data
+					break
+				else:
+					current_node = current_node.next
+					holder +=1
 
 		return data
 ll = LinkedList()
 ll.append_node(4)
 ll.append_node(2)
 ll.append_node(11)
+ll.append_node(22)
+ll.append_node(211)
 print(ll.all_nodes())
-print(ll.index_points_to(3))
+print(ll.index_points_to(6))
